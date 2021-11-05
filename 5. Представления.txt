@@ -1,0 +1,30 @@
+CREATE VIEW v1 AS 
+SELECT u.name as `Имя`,
+p.gender as `Пол`, 
+dc.city as `Город`,
+p.age as `Возраст`,
+p.height as `Рост`,
+p.weight as `Вес`,
+pa.about_text as `О себе`,
+pa.find_text as `Кого хочу найти` 
+FROM users u 
+JOIN profiles p 
+JOIN descr_cities dc 
+JOIN profiles_about pa 
+ON u.id=p.id AND dc.id=p.city AND pa.id=p.id AND p.id>1400000 limit 50;# (p.id BETWEEN 1400000 AND 1700000);
+
+CREATE VIEW v2 AS 
+SELECT u.name as `Имя`,
+p.age as `Возраст`,
+df.family as `Как знакомлюсь`,
+do.orientation as `Ориентация`,
+dk.kids as `Есть ли дети`,
+dr.relation as `Опыт отношений`
+FROM users u 
+JOIN profiles p 
+JOIN profiles_ext pe 
+JOIN descr_family df 
+JOIN descr_orientation do 
+JOIN descr_kids dk 
+JOIN descr_relation dr 
+ON u.id=p.id AND pe.id=p.id AND pe.family_id =df.id AND pe.kids_id = dk.id AND pe.relation_id = dr.id AND pe.orientation_id =do.id limit 100;
