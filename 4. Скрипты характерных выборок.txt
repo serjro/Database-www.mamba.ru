@@ -1,23 +1,23 @@
-SELECT u.name as `Имя`, 
-p.gender as `Пол`, 
-dc.city as `Город`,
-p.age as `Возраст`,
-p.height as `Рост`,
-p.weight as `Вес`,
-pa.about_text as `О себе`,
-pa.find_text as `Кого хочу найти` 
+SELECT u.name as `РРјСЏ`, 
+p.gender as `РџРѕР»`, 
+dc.city as `Р“РѕСЂРѕРґ`,
+p.age as `Р’РѕР·СЂР°СЃС‚`,
+p.height as `Р РѕСЃС‚`,
+p.weight as `Р’РµСЃ`,
+pa.about_text as `Рћ СЃРµР±Рµ`,
+pa.find_text as `РљРѕРіРѕ С…РѕС‡Сѓ РЅР°Р№С‚Рё` 
 FROM users u 
 JOIN profiles p 
 JOIN descr_cities dc 
 JOIN profiles_about pa 
 ON u.id=p.id AND dc.id=p.city AND pa.id=p.id AND p.id>1400000 limit 50;
 
-SELECT u.name as `Имя`,
-p.age as `Возраст`,
-df.family as `Как знакомлюсь`,
-do.orientation as `Ориентация`,
-dk.kids as `Есть ли дети`,
-dr.relation as `Опыт отношений`
+SELECT u.name as `РРјСЏ`,
+p.age as `Р’РѕР·СЂР°СЃС‚`,
+df.family as `РљР°Рє Р·РЅР°РєРѕРјР»СЋСЃСЊ`,
+do.orientation as `РћСЂРёРµРЅС‚Р°С†РёСЏ`,
+dk.kids as `Р•СЃС‚СЊ Р»Рё РґРµС‚Рё`,
+dr.relation as `РћРїС‹С‚ РѕС‚РЅРѕС€РµРЅРёР№`
 FROM users u 
 JOIN profiles p 
 JOIN profiles_ext pe 
